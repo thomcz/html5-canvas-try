@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acceleration Canvas</title>
+	 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body onresize="setCanvasSize()" onload="initialize()">
+
+<!-- The Settings Modal -->
+<div id="formModal" class="modal">
+  <!-- content -->
+  <div class="modal-content">
+    <i class="material-icons close" onClick="closeModal();">close</i>
+	
+	<h3>Settings</h3>
+	Select a Form:<br>
+    <select id="form">
+		<option value="dots">Dots</option>
+		<option value="circle">Circle</option>
+		<option value="line">Line</option>
+		<option value="rect">Rect</option>
+	</select><br><br>	
+	Color:<br>
+	<input id="color" type="color" onchange="clickColor(0, -1, -1, 5)" value="#ff0000"><br><br>
+	LineWidth:<br>
+	<input id="linewidth" type="range" min="3" max="20" value="3"><br>
+	Radian:<br>
+	<input id="radian" type="range" min="1" max="100" value="20"><br>
+	Length:<br>
+	<input id="length" type="range" min="10" max="100" value="30"><br>
+	Width:<br>
+	<input id="width" type="range" min="10" max="100" value="30"><br>
+  </div>
+</div>
+
+<canvas id="myCanvas">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<div id="icons">
+	<i class="material-icons md-36" onClick="setStop(false);">play_arrow</i>
+	<i class="material-icons md-36" onClick="setStop(true);">pause</i>
+	<i class="material-icons md-36" onClick="clearingCanvas();">loop</i>
+	<i class="material-icons md-36" onClick="openSettings();">settings</i>
+</div>
+
+</body>
+</html>
